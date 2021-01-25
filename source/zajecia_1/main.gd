@@ -23,14 +23,22 @@ func _ready():
 	
 func _process(delta):
 	if hp < max_hp:
-		hp += 1
-		
-	hit_points_bar.value = hp
-	hit_points_bar2.value = hp
+		update_hp( 1 )
+
+	if Input.is_action_just_pressed("ui_accept"):
+		update_hp( -100 )
 		
 #	if hp % 10 == 0:
 #		hit_points_label.text = "HP = " + str(hp)
 
+func update_hp( value ):
+	if (hp + value) < 0:
+		hp = 0
+	else:
+		hp += value
+		
+	hit_points_bar.value = hp
+	hit_points_bar2.value = hp
 	update()
 
 func _draw():
