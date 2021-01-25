@@ -35,7 +35,9 @@ func update_hp( value ):
 	if (hp + value) < 0:
 		hp = 0
 		$Game_over.text = "GAME OVER"
-		set_process(false)
+#		set_process(false)
+		get_tree().change_scene("res://scenes/game_over.tscn")
+		
 	else:
 		hp += value
 		
