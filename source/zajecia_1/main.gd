@@ -6,17 +6,15 @@ var text = "iterator = "
 onready var hit_points = $HP
 
 func _ready():
+	iterator += 1
 #	print (text, iterator)
 #	print ("iterator = " + str(iterator) )
-
-#	iterator = iterator + 1
-#	print ("iterator = " + str(iterator) )
-	
-	iterator += 1
 	print ("iterator = " + str(iterator) )
 
-	hit_points.text = "HP = " + str(iterator)
+	for i in 10:
+		print(i)
+		hit_points.text = "HP = " + str(i)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	iterator += 1
+	hit_points.text = "HP = " + str(iterator)
