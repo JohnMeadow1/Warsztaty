@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/invader_01.png" type="Texture" id=1]
+[ext_resource path="res://scenes/alien.tscn" type="PackedScene" id=2]
+
+[node name="lavel" type="Node2D"]
+
+[node name="alien" parent="." instance=ExtResource( 2 )]
+
+[node name="alien2" type="Node2D" parent="."]
+position = Vector2( 180, 79 )
+
+[node name="Sprite" type="Sprite" parent="alien2"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien3" type="Node2D" parent="."]
+position = Vector2( 238.027, 82.7838 )
+
+[node name="Sprite" type="Sprite" parent="alien3"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien4" type="Node2D" parent="."]
+position = Vector2( 311.901, 79.7937 )
+
+[node name="Sprite" type="Sprite" parent="alien4"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien5" type="Node2D" parent="."]
+position = Vector2( 368.901, 79.7937 )
+
+[node name="Sprite" type="Sprite" parent="alien5"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien6" type="Node2D" parent="."]
+position = Vector2( 426.928, 83.5775 )
+
+[node name="Sprite" type="Sprite" parent="alien6"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien7" type="Node2D" parent="."]
+position = Vector2( 499.214, 81.3811 )
+
+[node name="Sprite" type="Sprite" parent="alien7"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien8" type="Node2D" parent="."]
+position = Vector2( 556.214, 81.3811 )
+
+[node name="Sprite" type="Sprite" parent="alien8"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien9" type="Node2D" parent="."]
+position = Vector2( 614.241, 85.1649 )
+
+[node name="Sprite" type="Sprite" parent="alien9"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien10" type="Node2D" parent="."]
+position = Vector2( 705.576, 82.1748 )
+
+[node name="Sprite" type="Sprite" parent="alien10"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien11" type="Node2D" parent="."]
+position = Vector2( 762.576, 82.1748 )
+
+[node name="Sprite" type="Sprite" parent="alien11"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="alien12" type="Node2D" parent="."]
+position = Vector2( 820.603, 85.9586 )
+
+[node name="Sprite" type="Sprite" parent="alien12"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+__meta__ = {
+"_edit_lock_": true
+}
