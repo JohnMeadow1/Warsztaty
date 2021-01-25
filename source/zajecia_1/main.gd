@@ -16,5 +16,7 @@ func _ready():
 		hit_points.text = "HP = " + str(i)
 
 func _process(delta):
+	
 	iterator += 1
-	hit_points.text = "HP = " + str(iterator)
+	if iterator % 13 == 0:
+		hit_points.text = "HP = " + str(iterator)
