@@ -30,3 +30,13 @@ func _process(delta):
 		
 #	if hp % 10 == 0:
 #		hit_points_label.text = "HP = " + str(hp)
+
+	update()
+
+func _draw():
+	draw_line(Vector2(60,40), Vector2(60 + hp ,40), Color.red, 3)
+	
+	draw_line(Vector2(60,60), Vector2(980,60), Color.white, 3)
+	draw_line(Vector2(60,60), Vector2(60,560), Color.white, 3)
+	draw_line(Vector2(60,560), Vector2(980,560), Color.white, 3)
+	draw_line(Vector2(980,60), Vector2(980,560), Color.white, 3)

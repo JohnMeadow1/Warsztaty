@@ -34,8 +34,10 @@ margin_right = 74.25
 margin_bottom = 10.0
 rect_scale = Vector2( 5, 3 )
 max_value = 500.0
-value = 500.0
+value = 100.0
+texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 2 )
+tint_under = Color( 0.329412, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
