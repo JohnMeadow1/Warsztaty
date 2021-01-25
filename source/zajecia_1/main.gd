@@ -34,6 +34,8 @@ func _process(delta):
 func update_hp( value ):
 	if (hp + value) < 0:
 		hp = 0
+		$Game_over.text = "GAME OVER"
+		set_process(false)
 	else:
 		hp += value
 		
