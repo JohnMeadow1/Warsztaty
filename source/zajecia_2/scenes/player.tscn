@@ -23,6 +23,7 @@ tracks/0/keys = {
 
 [node name="player" type="Node2D"]
 script = ExtResource( 2 )
+upgrade = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
@@ -33,6 +34,15 @@ position = Vector2( 0, 23 )
 rotation = -1.5708
 texture = ExtResource( 3 )
 vframes = 8
+
+[node name="Gun0" type="Position2D" parent="Sprite"]
+position = Vector2( -18.5, -2 )
+
+[node name="Gun1" type="Position2D" parent="Sprite"]
+position = Vector2( 18.5, -2 )
+
+[node name="Gun2" type="Position2D" parent="Sprite"]
+position = Vector2( 0, -16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "exchaust"

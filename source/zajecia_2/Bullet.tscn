@@ -27,11 +27,11 @@ tracks/0/keys = {
 }
 
 [node name="Bullet" type="RigidBody2D"]
+collision_layer = 2
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
-linear_velocity = Vector2( 0, -400 )
 linear_damp = 0.0
 script = ExtResource( 2 )
 
@@ -41,7 +41,6 @@ rotation = -1.5708
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 vframes = 3
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
