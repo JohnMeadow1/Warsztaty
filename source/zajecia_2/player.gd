@@ -7,29 +7,33 @@ export var bullet_speed = 400
 export var upgrade = 0
 
 var shoot_timer = 0
-var shoot_gun = 0
+var shoot_gun   = 0
 
 onready var gun0 = $Sprite/Gun0
 onready var gun1 = $Sprite/Gun1 
 onready var gun2 = $Sprite/Gun2 
 
 func _ready():
-	pass
+	match player_id:
+		"0":
+			$Sprite.modulate = Color.green
+		"1":
+			$Sprite.modulate = Color.yellow
 
 func _process(delta):
 	
 	shoot_timer -= delta
-	
-	if Input.is_action_pressed("ui_up"+player_id):
-		position.y-=move_speed*delta
-	if Input.is_action_pressed("ui_down"+player_id):
-		position.y+=move_speed*delta
+#
+#	if Input.is_action_pressed("ui_up"+player_id):
+#		position.y-=move_speed*delta
+#	if Input.is_action_pressed("ui_down"+player_id):
+#		position.y+=move_speed*delta
 		
-	if Input.is_action_pressed("ui_left"+player_id):
+	if Input.is_action_pressed("player_"+player_id+"_left"):
 		position.x-=move_speed*delta
 		$Sprite.rotation -= delta * 5
 		
-	if Input.is_action_pressed("ui_right"+player_id):
+	if Input.is_action_pressed("player_"+player_id+"_right"):
 		position.x+=move_speed*delta
 		$Sprite.rotation += delta * 5
 	
@@ -38,7 +42,7 @@ func _process(delta):
 	position.x = clamp( position.x, 0, 1024 )
 	position.y = clamp( position.y, 0, 600 )
 
-	if shoot_timer <=0 && Input.is_action_pressed( "ui_select" + player_id ):
+	if shoot_timer <=0 && Input.is_action_pressed( "player_"+player_id+"_shoot" ):
 		match upgrade:
 			0:
 				add_bullet( gun2, Vector2(0,-1).rotated(0.0) )

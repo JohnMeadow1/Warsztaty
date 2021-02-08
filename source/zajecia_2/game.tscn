@@ -7,5 +7,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="player" parent="." instance=ExtResource( 2 )]
+[node name="player0" parent="." instance=ExtResource( 2 )]
 position = Vector2( 520, 520 )
+player_id = "0"
+upgrade = 1
+
+[node name="player1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 662.553, 520 )
+player_id = "1"
+upgrade = 0
