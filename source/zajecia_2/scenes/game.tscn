@@ -4,8 +4,6 @@
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=3]
 
-
-
 [node name="game" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
