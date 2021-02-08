@@ -17,13 +17,19 @@ func _process(delta):
 		position.y-=move_speed*delta
 	if Input.is_action_pressed("ui_down"+player_id):
 		position.y+=move_speed*delta
+		
 	if Input.is_action_pressed("ui_left"+player_id):
 		position.x-=move_speed*delta
+		$Sprite.rotation -= delta * 5
+		
 	if Input.is_action_pressed("ui_right"+player_id):
 		position.x+=move_speed*delta
+		$Sprite.rotation += delta * 5
 	
-	position.x=clamp(position.x,0,1024)
-	position.y=clamp(position.y,0,600)
+	$Sprite.rotation -= $Sprite.rotation * delta * 10.0
+	
+	position.x = clamp( position.x, 0, 1024 )
+	position.y = clamp( position.y, 0, 600 )
 
 	if shoot_timer <=0 && Input.is_action_pressed( "ui_select" + player_id ):
 		var new_bullet = bullet_scene.instance()
