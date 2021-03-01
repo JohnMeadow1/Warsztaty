@@ -5,6 +5,7 @@ export var move_speed = 500
 export var player_id = ""
 export var bullet_speed = 400
 export var upgrade = 0
+export var hit_points = 2
 
 var shoot_timer = 0
 var shoot_gun   = 0
@@ -81,5 +82,7 @@ func add_bullet( gun, direction = Vector2(0, - 1), color = Color.white ):
 	new_bullet.global_position = gun.global_position
 	new_bullet.modulate = color
 
-func _physics_process(delta):
-	pass
+func damage( value ):
+	hit_points -= value
+	if hit_points<= 0:
+		queue_free()

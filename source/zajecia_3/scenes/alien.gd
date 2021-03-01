@@ -5,6 +5,9 @@ var hp = 2
 func _on_body_entered(body):
 	body.queue_free()
 	
-	hp -= 1
+	damage( 1 )
+
+func damage( value ):
+	hp -= value
 	if hp <=0:
 		queue_free()
