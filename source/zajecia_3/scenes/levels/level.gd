@@ -6,9 +6,10 @@ var alien_scene = load("res://scenes/alien.tscn")
 export var travel_speed = 10
 
 func _ready():
-	for y in 5:
-		for x in 20:
-			add_enemy( Vector2(x, y) )
+#	for y in 5:
+#		for x in 20:
+#			add_enemy( Vector2(x, y) )
+	pass
 
 func add_enemy( spawn_position ):
 	var new_enemy = alien_scene.instance()
