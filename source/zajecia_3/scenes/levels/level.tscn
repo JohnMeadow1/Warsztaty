@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/levels/level.gd" type="Script" id=1]
+[ext_resource path="res://sprites/starfield.png" type="Texture" id=2]
 
 [node name="level" type="Node2D"]
 script = ExtResource( 1 )
+travel_speed = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 600 )

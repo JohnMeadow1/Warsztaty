@@ -1,6 +1,9 @@
 extends Node2D
 
+onready var background := $background
 var alien_scene = load("res://scenes/alien.tscn")
+
+export var travel_speed = 1
 
 func _ready():
 	for y in 5:
@@ -14,4 +17,5 @@ func add_enemy( spawn_position ):
 	
 	new_enemy.modulate = Color(spawn_position.x/20.0 , spawn_position.y /5.0, 0)
 
-	
+func _process(delta):
+	background.region_rect.position.y -= travel_speed
