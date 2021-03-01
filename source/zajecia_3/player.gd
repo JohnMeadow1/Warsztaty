@@ -16,9 +16,9 @@ onready var gun2 = $Sprite/Gun2
 func _ready():
 	match player_id:
 		"0":
-			$Sprite.modulate = Color.green
+			$Sprite.modulate = Color.white
 		"1":
-			$Sprite.modulate = Color.yellow
+			$Sprite.modulate = Color.green
 
 func _process(delta):
 	
