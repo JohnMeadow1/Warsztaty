@@ -1,4 +1,9 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/GravityRegular5.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
@@ -11,3 +16,25 @@ __meta__ = {
 margin_right = 1024.0
 margin_bottom = 40.0
 color = Color( 0, 0, 0, 0.32549 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 1 )
+text = "Cash:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cash" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 8.0
+margin_right = 162.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

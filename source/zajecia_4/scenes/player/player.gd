@@ -1,4 +1,5 @@
 extends Node2D
+class_name Player
 
 var bullet_scene = preload("res://scenes/bullets/bullet.tscn")
 export var move_speed = 500
@@ -13,6 +14,9 @@ var shoot_gun   = 0
 onready var gun0 = $Sprite/Gun0
 onready var gun1 = $Sprite/Gun1 
 onready var gun2 = $Sprite/Gun2 
+
+var cash = 0
+onready var GUI = get_parent().get_node("GUI/Cash")
 
 func _ready():
 	match player_id:
@@ -86,3 +90,9 @@ func damage( value ):
 	hit_points -= value
 	if hit_points<= 0:
 		queue_free()
+
+func add_coins( value ):
+	cash += value
+	GUI.text = str(cash)
+	
+

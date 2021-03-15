@@ -19,6 +19,10 @@ func _on_body_entered(body):
 	current_hit_points -= 1
 	if current_hit_points <= 0:
 		queue_free()
+		if randi()% 100 > 49:
+			for i in 10:
+				level.create_coin( 5, global_position + Vector2.RIGHT.rotated( float(i)/10.0 * TAU ) * rand_range( 30, 60 ) )
+				
 		level.create_coin( (randi() % 10 + 1) * 5, global_position )
 #		if max_hit_points >=2:
 #			split( 2 )

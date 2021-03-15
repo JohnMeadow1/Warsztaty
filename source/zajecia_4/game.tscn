@@ -16,10 +16,4 @@ position = Vector2( 520, 520 )
 player_id = "0"
 upgrade = 1
 
-[node name="player1" parent="." instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 662.553, 520 )
-player_id = "1"
-upgrade = 0
-
 [node name="GUI" parent="." instance=ExtResource( 3 )]
