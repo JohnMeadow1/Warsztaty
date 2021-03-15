@@ -24,11 +24,11 @@ func _ready():
 func _process(delta):
 	
 	shoot_timer -= delta
-#
-#	if Input.is_action_pressed("ui_up"+player_id):
-#		position.y-=move_speed*delta
-#	if Input.is_action_pressed("ui_down"+player_id):
-#		position.y+=move_speed*delta
+
+	if Input.is_action_pressed("player_"+player_id+"_up"):
+		position.y-=move_speed*delta
+	if Input.is_action_pressed("player_"+player_id+"_down"):
+		position.y+=move_speed*delta
 		
 	if Input.is_action_pressed("player_"+player_id+"_left"):
 		position.x-=move_speed*delta
