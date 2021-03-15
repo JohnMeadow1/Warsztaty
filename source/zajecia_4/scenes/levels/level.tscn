@@ -1,0 +1,141 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/levels/level.gd" type="Script" id=1]
+[ext_resource path="res://sprites/starfield.png" type="Texture" id=2]
+[ext_resource path="res://sprites/star.png" type="Texture" id=3]
+[ext_resource path="res://sprites/asteroid.png" type="Texture" id=4]
+[ext_resource path="res://scenes/levels/asteroid.tscn" type="PackedScene" id=5]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 512, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 500.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="CanvasItemMaterial" id=2]
+particles_animation = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = true
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 512, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 1.0
+color = Color( 0.478431, 0.478431, 0.478431, 1 )
+anim_speed = 10.0
+anim_speed_random = 1.0
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 2
+emission_box_extents = Vector3( 512, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.0
+scale_random = 1.0
+
+[node name="level" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="background" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.411765, 0.411765, 0.411765, 1 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 600 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dust" type="Particles2D" parent="."]
+position = Vector2( 512, -30 )
+amount = 100
+lifetime = 2.0
+preprocess = 30.0
+process_material = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Asteroids" type="Particles2D" parent="."]
+material = SubResource( 2 )
+position = Vector2( 512, -30 )
+amount = 3
+lifetime = 8.0
+preprocess = 30.0
+process_material = SubResource( 3 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Stars" type="Particles2D" parent="."]
+position = Vector2( 512, -30 )
+amount = 30
+lifetime = 40.0
+preprocess = 30.0
+process_material = SubResource( 4 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="obstacles" type="Node2D" parent="."]
+position = Vector2( 11.1118, 4.76224 )
+
+[node name="asteroid" parent="obstacles" instance=ExtResource( 5 )]
+position = Vector2( 511.143, -38.0977 )
+max_hit_points = 6.0
+
+[node name="asteroid2" parent="obstacles" instance=ExtResource( 5 )]
+position = Vector2( 409.258, -171.241 )
+max_hit_points = 6.0
+
+[node name="asteroid3" parent="obstacles" instance=ExtResource( 5 )]
+position = Vector2( 512.439, -369.666 )
+max_hit_points = 6.0
+
+[node name="asteroid4" parent="obstacles" instance=ExtResource( 5 )]
+position = Vector2( 414.02, -499.833 )
+max_hit_points = 6.0
+
+[node name="asteroid5" parent="obstacles" instance=ExtResource( 5 )]
+position = Vector2( 520.376, -682.599 )
+max_hit_points = 6.0
