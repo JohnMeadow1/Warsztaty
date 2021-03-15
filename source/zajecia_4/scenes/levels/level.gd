@@ -3,7 +3,7 @@ extends Node2D
 onready var background := $background
 onready var obstacles := $obstacles
 
-var alien_scene = load("res://scenes/alien.tscn")
+var alien_scene = load("res://scenes/enemies/alien.tscn")
 
 export var travel_speed = 10
 export var level_speed = 100
