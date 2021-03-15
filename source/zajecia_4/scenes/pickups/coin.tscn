@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/GravityRegular5.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scenes/pickubles/coin.gd" type="Script" id=2]
-[ext_resource path="res://scenes/pickubles/coin.png" type="Texture" id=3]
+[ext_resource path="res://scenes/pickups/coin.gd" type="Script" id=2]
+[ext_resource path="res://scenes/pickups/coin.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
@@ -11,6 +11,7 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
+length = 1.2
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
@@ -19,7 +20,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0.2, 0.7, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1 ), Vector2( 1, 1 ) ]
@@ -29,6 +30,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.256925, 1 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
