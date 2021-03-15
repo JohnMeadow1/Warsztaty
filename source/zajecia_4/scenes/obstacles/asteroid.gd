@@ -1,13 +1,14 @@
 extends Sprite
 
 var asteroid_object = load("res://scenes/obstacles/asteroid.tscn")
-var coin_object     = load("res://scenes/pickubles/coin.tscn")
+var level
 
 export var max_hit_points = 5.0
 export var size = 1.0
 var current_hit_points = 0.0
 
 func _ready():
+	level    = get_parent().get_parent()
 	rotation = rand_range(0, TAU)
 	frame    = randi() % 64
 	scale    = Vector2( size,  size  )
@@ -18,7 +19,7 @@ func _on_body_entered(body):
 	current_hit_points -= 1
 	if current_hit_points <= 0:
 		queue_free()
-		create_coin( (randi() % 10 + 1) * 5 )
+		level.create_coin( (randi() % 10 + 1) * 5, global_position )
 #		if max_hit_points >=2:
 #			split( 2 )
 		
@@ -36,9 +37,5 @@ func split( parts ):
 		new_asteroid.max_hit_points = max_hit_points / parts
 		get_parent().add_child(new_asteroid)
 
-func create_coin( value ):
-	var new_coin = coin_object.instance()
-	new_coin.position = position
-	new_coin.value = value
-	get_parent().add_child(new_coin)
+
 
