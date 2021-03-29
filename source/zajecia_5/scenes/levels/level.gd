@@ -12,7 +12,7 @@ export var level_speed = 100
 
 func _ready():
 	randomize()
-	generate_alines()
+#	generate_alines()
 	pass
 
 func generate_alines():

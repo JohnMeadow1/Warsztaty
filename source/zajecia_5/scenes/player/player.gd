@@ -82,7 +82,7 @@ func add_bullet( gun, direction = Vector2(0, - 1), color = Color.white ):
 	var new_bullet = bullet_scene.instance()
 	get_parent().add_child( new_bullet )
 	
-	new_bullet.linear_velocity = direction * bullet_speed
+	new_bullet.velocity = direction * bullet_speed
 	new_bullet.global_position = gun.global_position
 	new_bullet.modulate = color
 
