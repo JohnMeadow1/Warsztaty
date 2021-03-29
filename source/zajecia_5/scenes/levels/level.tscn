@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/levels/level.gd" type="Script" id=1]
 [ext_resource path="res://sprites/starfield.png" type="Texture" id=2]
 [ext_resource path="res://sprites/star.png" type="Texture" id=3]
 [ext_resource path="res://sprites/asteroid7.png" type="Texture" id=4]
-[ext_resource path="res://scenes/obstacles/asteroid.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/pickups/coin.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ParticlesMaterial" id=1]
@@ -119,21 +118,6 @@ __meta__ = {
 
 [node name="obstacles" type="Node2D" parent="."]
 position = Vector2( 11.1118, 4.76224 )
-
-[node name="asteroid" parent="obstacles" instance=ExtResource( 5 )]
-position = Vector2( 511.143, -38.0977 )
-
-[node name="asteroid2" parent="obstacles" instance=ExtResource( 5 )]
-position = Vector2( 409.258, -171.241 )
-
-[node name="asteroid3" parent="obstacles" instance=ExtResource( 5 )]
-position = Vector2( 512.439, -369.666 )
-
-[node name="asteroid4" parent="obstacles" instance=ExtResource( 5 )]
-position = Vector2( 414.02, -499.833 )
-
-[node name="asteroid5" parent="obstacles" instance=ExtResource( 5 )]
-position = Vector2( 520.376, -682.599 )
 
 [node name="pickups" type="Node2D" parent="."]
 

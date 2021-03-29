@@ -14,7 +14,7 @@ resource_name = "idle"
 length = 6.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -35,13 +35,13 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 vframes = 8
 hframes = 8
-frame = 63
+frame = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "New Anim"
+autoplay = "idle"
 "anims/New Anim" = SubResource( 2 )
 anims/idle = SubResource( 3 )
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
