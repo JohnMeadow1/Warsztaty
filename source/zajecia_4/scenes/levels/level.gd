@@ -35,5 +35,7 @@ func _process(delta):
 func create_coin( value, target_position ):
 	var new_coin = coin_object.instance()
 	new_coin.value = value
-	$pickups.add_child(new_coin)
-	new_coin.global_position = target_position
+#	$pickups.add_child(new_coin)
+	$pickups.call_deferred("add_child", new_coin)
+#	new_coin.global_position = target_position
+	new_coin.global_position = target_position - $pickups.global_position

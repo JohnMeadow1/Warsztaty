@@ -66,7 +66,6 @@ __meta__ = {
 }
 
 [node name="background" type="Sprite" parent="."]
-visible = false
 modulate = Color( 0.411765, 0.411765, 0.411765, 1 )
 texture = ExtResource( 2 )
 centered = false
