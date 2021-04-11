@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/asteroid.png" type="Texture" id=1]
 [ext_resource path="res://objects/Asteroid.gd" type="Script" id=2]
@@ -20,7 +20,11 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 ]
 }
 
-[node name="Asteroid" type="Node2D"]
+[sub_resource type="CircleShape2D" id=2]
+radius = 32.0
+
+[node name="Asteroid" type="Area2D"]
+collision_layer = 32
 script = ExtResource( 2 )
 
 [node name="asteroid" type="Sprite" parent="."]
@@ -32,3 +36,7 @@ frame = 26
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 anims/idle = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

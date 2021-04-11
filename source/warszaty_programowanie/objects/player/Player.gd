@@ -5,8 +5,9 @@ onready var engine_animator  := $AnimationPlayer
 onready var engine_animator2 := $AnimationPlayer2
 onready var ship := $body
 
-const ENGINE_THRUST := 1000.0
+const ENGINE_THRUST := 500.0
 const ANGULAR_ACCELERATION := 20.0
+
 const VELOCITY_DAMPING := 1.0
 const ANGULAT_VELOCITY_DAMPING := 2.5
 const mass = 10
@@ -43,7 +44,7 @@ func _process( delta ):
 		distance = gravity_direction.length_squared() + pow(gravity_object.radius, 2)
 		gravity +=  (mass + gravity_object.mass) / distance * gravity_direction.normalized()
 	
-	velocity -= velocity * VELOCITY_DAMPING * delta
+#	velocity -= velocity * VELOCITY_DAMPING * delta
 	
 #	if abs(is_thrusting) > 0:
 	velocity += (facing * is_thrusting * ENGINE_THRUST + gravity) * delta 
@@ -78,6 +79,12 @@ func process_input( delta ):
 		anglular_velocity += ANGULAR_ACCELERATION * delta
 
 func _draw():
-	draw_line(Vector2.ZERO, gravity , Color.white, 3 )
-	draw_line(Vector2.ZERO, velocity , Color.green, 3 )
-	draw_line(Vector2.ZERO, facing * is_thrusting * ENGINE_THRUST, Color.yellow, 3 )
+	draw_line(Vector2.ZERO, gravity , Color(1,1,1,0.3), 3 )
+	draw_line(Vector2.ZERO, velocity , Color(0,1,0,0.3), 3 )
+	draw_line(Vector2.ZERO, facing * is_thrusting * ENGINE_THRUST, Color(1,1,0,0.3), 3 )
+
+
+func _on_area_entered(area):
+	if area is Asteroid:
+		var vector_to_asteroid = area.global_position - global_position
+		velocity = velocity.bounce(vector_to_asteroid.normalized())
