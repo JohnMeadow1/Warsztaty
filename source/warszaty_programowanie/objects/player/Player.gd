@@ -1,4 +1,5 @@
 extends Node2D
+class_name Player
 
 onready var engine_animator  := $AnimationPlayer
 onready var engine_animator2 := $AnimationPlayer2
@@ -6,6 +7,7 @@ onready var ship := $body
 
 const ENGINE_THRUST := 100.0
 const ANGULAR_ACCELERATION := 10.0
+const mass = 10
 
 # prędkosć
 var velocity := Vector2.ZERO
@@ -18,6 +20,9 @@ var facing := Vector2.RIGHT
 var orientation := 0.0
 var anglular_velocity := 0.0
 
+var gravity := Vector2.ZERO
+var gravity_direction := Vector2.ZERO
+
 func _ready():
 	pass
 
@@ -27,10 +32,20 @@ func _process( delta ):
 	orientation += anglular_velocity * delta
 	facing = Vector2( cos(orientation), sin(orientation) )
 	
-	velocity += facing * is_thrusting * ENGINE_THRUST * delta
+	gravity = Vector2.ZERO
+	var distance := 0.0
+	for gravity_object in get_tree().get_nodes_in_group("gravity_object"):
+		gravity_direction = gravity_object.global_position - global_position
+		distance = gravity_direction.length_squared() + pow(gravity_object.radius, 2)
+		gravity +=  (mass + gravity_object.mass) / distance * gravity_direction.normalized()
+		
+	
+	velocity += (facing * is_thrusting * ENGINE_THRUST + gravity) * delta 
 	position += velocity * delta
 	
 	ship.rotation = orientation
+	
+	update()
 	
 func process_input( delta ):
 	is_thrusting = 0
@@ -52,3 +67,7 @@ func process_input( delta ):
 	if Input.is_action_pressed("Player_right"):
 		anglular_velocity += ANGULAR_ACCELERATION * delta
 
+func _draw():
+	draw_line(Vector2.ZERO, gravity , Color.white, 3 )
+	draw_line(Vector2.ZERO, velocity , Color.green, 3 )
+	draw_line(Vector2.ZERO, facing * is_thrusting * ENGINE_THRUST, Color.yellow, 3 )
