@@ -8,15 +8,52 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Sprite",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://objects/Bullet.gd"
+}, {
+"base": "Node2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://objects/Enemy.gd"
+}, {
+"base": "Node2D",
+"class": "GameMap",
+"language": "GDScript",
+"path": "res://objects/Map.gd"
+}, {
+"base": "Area2D",
+"class": "Headquarters",
+"language": "GDScript",
+"path": "res://objects/HQ.gd"
+}, {
+"base": "Area2D",
+"class": "Turret",
+"language": "GDScript",
+"path": "res://objects/Turret.gd"
+} ]
 _global_script_class_icons={
-
+"Bullet": "",
+"Enemy": "",
+"GameMap": "",
+"Headquarters": "",
+"Turret": ""
 }
 
 [application]
 
 config/name="GodotTutorial2"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[layer_names]
+
+2d_physics/layer_1="HQ"
+2d_physics/layer_2="Turret"
+2d_physics/layer_3="Bullet"
+2d_physics/layer_6="Enemy"
 
 [rendering]
 
