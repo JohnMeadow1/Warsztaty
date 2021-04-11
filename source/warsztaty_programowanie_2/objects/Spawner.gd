@@ -2,9 +2,9 @@ extends Node2D
 
 var enemy_object := load("res://objects/Enemy.tscn")
 
-export(Array) var waves_count := [1, 20, 20, 20]
-export(Array) var waves_hp    := [1, 2, 3, 1]
-export(Array) var waves_speed := [50, 500, 300, 100]
+export(Array) var waves_count := [5, 10, 20, 20]
+export(Array) var waves_hp    := [10, 20, 10, 1]
+export(Array) var waves_speed := [100, 50, 300, 100]
 
 var current_wave := 0
 var spawn_complete := false

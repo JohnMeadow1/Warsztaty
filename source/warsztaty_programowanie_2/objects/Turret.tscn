@@ -5,7 +5,7 @@
 [ext_resource path="res://objects/Turret.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 100.0
+radius = 200.0
 
 [node name="Turret" type="Area2D"]
 collision_layer = 0
@@ -19,6 +19,9 @@ texture = ExtResource( 1 )
 position = Vector2( 8, 0 )
 texture = ExtResource( 2 )
 vframes = 3
+
+[node name="bullet_spawn" type="Position2D" parent="body"]
+position = Vector2( 22, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

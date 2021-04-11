@@ -20,6 +20,7 @@ tracks/0/keys = {
 }
 
 [node name="asteroid" type="Sprite"]
+show_behind_parent = true
 texture = ExtResource( 1 )
 vframes = 8
 hframes = 8

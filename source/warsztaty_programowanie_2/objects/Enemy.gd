@@ -5,6 +5,7 @@ export var debug := false
 
 var speed := 30.0
 var hit_points := 1.0
+var size = 0.0
 
 var facing := Vector2.LEFT
 
@@ -12,7 +13,7 @@ onready var sprite := $fighter
 var map :GameMap
 
 func _ready():
-	pass
+	size = $CollisionShape2D.shape.radius
 
 func _process(delta):
 	position += facing * speed * delta
@@ -29,8 +30,14 @@ func _process(delta):
 		$Label.text = str((( position ) / 64).floor() )
 		$Label.text += "\n"+str(map.get_coordinates(position))
 
-
-
 func _on_area_entered(area):
 	if area is Headquarters:
 		queue_free()
+
+func damage(value):
+	hit_points -= value
+	if hit_points <= 0:
+		queue_free()
+		
+		
+		

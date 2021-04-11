@@ -15,6 +15,8 @@ __meta__ = {
 }
 
 [node name="starfield" type="Sprite" parent="."]
+visible = false
+show_behind_parent = true
 texture = ExtResource( 1 )
 centered = false
 __meta__ = {
@@ -22,6 +24,8 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
 material = SubResource( 1 )
 margin_right = 1024.0
 margin_bottom = 600.0
@@ -36,4 +40,7 @@ position = Vector2( 992, 416 )
 [node name="spawner" parent="." instance=ExtResource( 3 )]
 
 [node name="Turret" parent="." instance=ExtResource( 4 )]
-position = Vector2( 746, 406 )
+position = Vector2( 800, 224 )
+
+[node name="Turret2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 672, 352 )
