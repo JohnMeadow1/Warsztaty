@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var platform_object = load("res://Platform.tscn")
 
 func _ready():
