@@ -40,7 +40,7 @@ func get_new_target():
 		break
 
 func add_bullet():
-	var new_bullet = bullet_object.instance() as Bullet
+	var new_bullet = bullet_object.instance()
 	new_bullet.speed = bullet_speed
 	new_bullet.max_range = bullet_range
 	new_bullet.velocity = (current_target.global_position - global_position).normalized()
