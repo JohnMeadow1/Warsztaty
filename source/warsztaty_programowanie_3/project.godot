@@ -1,0 +1,79 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://objects/Bullet.gd"
+}, {
+"base": "Node2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://objects/Enemy.gd"
+}, {
+"base": "Node2D",
+"class": "GameMap",
+"language": "GDScript",
+"path": "res://objects/Map.gd"
+}, {
+"base": "Area2D",
+"class": "Headquarters",
+"language": "GDScript",
+"path": "res://objects/HQ.gd"
+}, {
+"base": "Area2D",
+"class": "Turret",
+"language": "GDScript",
+"path": "res://objects/Turret.gd"
+} ]
+_global_script_class_icons={
+"Bullet": "",
+"Enemy": "",
+"GameMap": "",
+"Headquarters": "",
+"Turret": ""
+}
+
+[application]
+
+config/name="GodotTutorial2"
+run/main_scene="res://game.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1000
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[input]
+
+LMB={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+RMB={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="HQ"
+2d_physics/layer_2="Turret"
+2d_physics/layer_3="Bullet"
+2d_physics/layer_6="Enemy"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
