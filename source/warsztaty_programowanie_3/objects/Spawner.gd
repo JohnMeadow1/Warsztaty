@@ -4,7 +4,7 @@ var enemy_object := load("res://objects/Enemy.tscn")
 
 export(Array) var waves_count := [5, 10, 20, 20, 50]
 export(Array) var waves_hp    := [10, 20, 10, 1, 5]
-export(Array) var waves_speed := [300, 150, 400, 200, 2000]
+export(Array) var waves_speed := [300, 150, 400, 200, 1000]
 
 var current_wave := 0
 var spawn_complete := false

@@ -19,7 +19,7 @@ func _ready():
 func _process(delta):
 	facing = map.get_direction_vector(global_position).normalized()
 	velocity += facing * speed * delta
-	velocity -= velocity * 3 * delta
+	velocity -= velocity * 4 * delta
 	position += velocity * delta
 	sprite.rotation = velocity.angle()
 #	sprite.rotation = lerp_angle( sprite.rotation, facing.angle(), 0.1 )
@@ -37,6 +37,4 @@ func damage(value):
 	hit_points -= value
 	if hit_points <= 0:
 		queue_free()
-		
-		
 		

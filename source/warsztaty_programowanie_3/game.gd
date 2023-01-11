@@ -145,20 +145,20 @@ func get_direction_vector( coords ):
 		minimum = get_grid_value(coords.x, coords.y-1)
 		direction = Vector2(0,-1)
 	if get_grid_value(coords.x, coords.y+1) < minimum:
-		minimum= get_grid_value(coords.x, coords.y+1)
+		minimum = get_grid_value(coords.x, coords.y+1)
 		direction = Vector2(0,1)
 		
 	if get_grid_value(coords.x+1, coords.y+1) < minimum:
-		minimum= get_grid_value(coords.x+1, coords.y+1)
+		minimum = get_grid_value(coords.x+1, coords.y+1)
 		direction = Vector2(1,1)
 	if get_grid_value(coords.x-1, coords.y+1) < minimum:
-		minimum= get_grid_value(coords.x-1, coords.y+1)
+		minimum = get_grid_value(coords.x-1, coords.y+1)
 		direction = Vector2(-1,1)
 	if get_grid_value(coords.x-1, coords.y-1) < minimum:
-		minimum= get_grid_value(coords.x-1, coords.y-1)
+		minimum = get_grid_value(coords.x-1, coords.y-1)
 		direction = Vector2(-1,-1)
 	if get_grid_value(coords.x+1, coords.y-1) < minimum:
-		minimum= get_grid_value(coords.x+1, coords.y-1)
+		minimum = get_grid_value(coords.x+1, coords.y-1)
 		direction = Vector2(+1,-1)
 
 #	direction.x = get_grid_value(coords.x-1, coords.y) - get_grid_value(coords.x+1, coords.y)
